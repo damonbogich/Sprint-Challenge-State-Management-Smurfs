@@ -1,5 +1,6 @@
 import axios from 'axios';
 
+
 export const fetchSmurf = () => {
     return dispatch => {
         dispatch({ type: 'FETCHING_SMURF_START' });
@@ -12,3 +13,31 @@ export const fetchSmurf = () => {
         
     };
 };
+
+// export const addSmurf = name, age, height, id => {
+//     return dispatch => {
+//         dispatch({type: 'ADD_SMURF'})
+//         axios
+//         .post('http://localhost:3333/smurfs')
+//         .then(response => {
+//             console.log("Great success", response);
+//             dispatch({type: "ADD_SMURF", payload: name, age, height, id});
+//         })
+//     }
+// }
+
+export const addSmurf = (name, age, height, id )=> {
+    return dispatch => {
+        dispatch({type: "ADD_SMURF"});
+        axios
+        .post('http://localhost:3333/smurfs')
+        .then(response => {
+            console.log(response)
+            dispatch({type: "ADD_SMURF", payload: {name, age, height, id}})
+        })
+    }
+}
+
+
+
+

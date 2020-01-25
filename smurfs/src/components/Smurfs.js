@@ -17,13 +17,22 @@ const Smurfs = props => {
     )
 }
 
+// const mapStateToProps = state => {
+//     return {
+//         isLoading: state.isLoading,
+//         smurfData: state.smurfData,
+//         error: state.errors
+//     }
+// }original
+
 const mapStateToProps = state => {
     return {
-        isLoading: state.isLoading,
-        smurfData: state.smurfData,
-        error: state.errors
+        isLoading: state.smurfReducer.isLoading,
+        smurfData: state.smurfReducer.smurfData,
+        error: state.smurfReducer.errors
     }
 }
+
 
 export default connect(
     mapStateToProps,
