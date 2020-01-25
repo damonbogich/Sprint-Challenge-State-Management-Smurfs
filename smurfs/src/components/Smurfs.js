@@ -5,7 +5,7 @@ import { fetchSmurf } from '../Action/index';
 import Smurf from './Smurf';
 
 const Smurfs = props => {
-    console.log(props);
+    console.log("smurfs props", props);
     return(
         <div>
             <Smurf

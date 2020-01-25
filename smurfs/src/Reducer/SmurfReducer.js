@@ -12,7 +12,7 @@ export const initialState = {
 
 
 export const smurfReducer = (state = initialState, action) => {
-  // console.log('smurfaction', action);
+  console.log('smurfactionpayload', action.payload)
     switch (action.type) {
     case "FETCHING_SMURF_START":
       return {
