@@ -16,8 +16,10 @@ const AddSmurfForm = props => {
     function handleChanges(e) {
         const value = e.target.value;
         setNewSmurf({
+            ...newSmurf,
             [e.target.name]: value
         });
+        console.log('this is new state', newSmurf)
     }
       
 
@@ -25,26 +27,26 @@ const AddSmurfForm = props => {
         <div>
             <input
             type = "text"
-            name="newName"
+            name="name"
             value={newSmurf.name}
             onChange={handleChanges}
             placeholder="Name"
             />
             <input
             type = "text"
-            name="newAge"
+            name="age"
             value={newSmurf.age}
             onChange={handleChanges}
             placeholder="Age"
             />
             <input
             type = "text"
-            name="newHeight"
+            name="height"
             value={newSmurf.height}
             onChange={handleChanges}
             placeholder="Height"
             />
-            <button onClick= {() => props.addSmurf(newSmurf)}>Submit</button>
+            <button onClick= {() => props.addSmurf(newSmurf.name, newSmurf.age, newSmurf.height)}>Submit</button>
         
         </div>
 )

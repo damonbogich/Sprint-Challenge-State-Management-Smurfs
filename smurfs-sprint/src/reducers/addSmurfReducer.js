@@ -11,12 +11,14 @@ export const initialState =  {
 
 export const addSmurfReducer = (state = initialState, action) => {
     switch(action.type) {
+        
         case "ADD_SMURF":
+            console.log('action payload', action.payload)
             return{
                  ...initialState,
                  smurfs: [
                      ...state.smurfs,
-                     {name: action.payload , age: action.payload , height: action.payload }
+                     action.payload
                  ]
             }
         default: 

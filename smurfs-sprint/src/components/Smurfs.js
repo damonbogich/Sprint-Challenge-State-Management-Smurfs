@@ -20,7 +20,7 @@ const Smurfs = props => {
                 timeout={3000} //3 secs
               />
             )}
-            {props.smurf && !props.isLoading && <Smurf smurfData={props.smurf} />}
+            {props.smurf && !props.isLoading && props.smurf.map(characteristic => { return <Smurf smurfData={characteristic} /> })}
         </div>
 
     )
