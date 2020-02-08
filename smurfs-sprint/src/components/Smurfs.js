@@ -28,9 +28,9 @@ const Smurfs = props => {
 
 const mapStateToProps = state => {
     return {
-    isLoading: state.isLoading,
-    smurf: state.smurf,
-    errors: state.errors
+    isLoading: state.fetchSmurfReducer.isLoading,
+    smurf: state.fetchSmurfReducer.smurf,
+    errors: state.fetchSmurfReducer.errors
     }
 }
 

@@ -5,13 +5,13 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
-// import {reducer} from '../src/Reducer'; original
-import rootReducer from '../src/Reducer/index';
+import {smurfReducer} from '../src/Reducer/SmurfReducer'; 
+// import rootReducer from '../src/Reducer/index';
 
 import "./index.css";
 import App from "./components/App";
 
 // const store = createStore(reducer, applyMiddleware(thunk, logger)); original
-const store = createStore(rootReducer, applyMiddleware(thunk, logger));
+const store = createStore(smurfReducer, applyMiddleware(thunk, logger));
 
 ReactDOM.render(<Provider store = {store}><App /></Provider>, document.getElementById("root"));

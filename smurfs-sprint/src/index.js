@@ -5,13 +5,13 @@ import {Provider} from 'react-redux';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
-import {fetchSmurfReducer} from './reducers/fetchSmurfReducer';
+import rootReducer from './reducers';
 
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-const store = createStore(fetchSmurfReducer, applyMiddleware(thunk, logger));
+const store = createStore(rootReducer, applyMiddleware(thunk, logger));
 
 
 
