@@ -66,3 +66,24 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `yarn build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+
+
+*  What problem does the context API help solve?
+*  In your own words, describe actions, reducers and the store and their role in Redux. What does each piece do? Why is the store known as a 'single source of truth' in a redux application?
+*  What is the difference between Application state and Component state? When would be a good time to use one over the other?
+*  Describe redux-thunk, what does it allow us to do? How does it change our action-creators?
+*  What is your favorite state management system you've learned and this sprint? Please explain why!
+
+1. With Context API you no longer have to pass props down from component to component.  We can now store data on a context object, and retrieve that data in the necessary components from the context object, not props!
+
+2. 
+
+    1. Actions: objects made up of a type and a payload.  The type describes what the action is supposed to do.  The payload supplies the data that the action is supposed to effect.
+    2. Reducers: this is a file that supplies the original state and manipulates state.
+    3. The store: The store holds all of the state for the entire app.
+
+3. Application state is the state being held in the store that your whole app has access to.  Component state is only available within its component.  You should use application state when a certain piece of state will be used multiple times.  
+
+4. Redux-thunk: We use Redux Thunk to make the flow asynchronous and make API calls from our action creators.
+
+5. I like redux the best because I can see how it would be so useful in an app that is really big.  I’m having trouble once our app goes beyond two or three components, so passing state in anything bigger than that would probably be confusing for anyone without something like redux.
